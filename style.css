@@ -17,7 +17,7 @@ body{
     color: white;
     margin-top: 0px;
     font-size: 16px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 400;
 }
 
@@ -185,7 +185,7 @@ body{
 
 .div-list{
     width: 90%;
-    height: 60%;
+    height: 80%;
     display: flex;
     justify-content: center;
     margin-top: 5%;
@@ -221,14 +221,14 @@ body{
 
 .manga-top{
     width: 95%;
-    height: 1%;
+    height: 3%;
     display: flex;
     background-color: white;
-    border-radius: 20%;
+    border-radius: 15px;
 }
 .manga-cards{
     width: 90%;
-    height: 60%;
+    height: 70%;
     display: flex;
     overflow-x: auto;
     white-space: nowrap;
@@ -242,4 +242,73 @@ body{
     border-bottom-right-radius: 15px;
     background-color: white;
     display: flex;
+}
+
+.product-card {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: aqua;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+}
+
+.product-image img{
+    width: 60%;
+    height: auto;
+    display: inline;
+    justify-content: center;
+    object-fit: cover;
+    margin-top: 5%;
+    margin-left: 20%;
+}
+
+.product-name{
+    width: 90%;
+    height: 10%;
+    font-size: auto;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.product-subname{
+    width: 90%;
+    height: fit-content;
+    font-size: 32px;
+    color: lightgray;
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.product-price{
+    width: 90%;
+    height: fit-content;
+    font-size: 40px;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 10%;
+    margin-top: 3%;
+}
+
+.product-buy{
+    width: 40%;
+    height: 20%;
+    background: #4a00e0;
+    border-radius: 30px;
+    color:white;
+    font-weight: 500;
+}
+
+.product-buy:hover{
+    transition-property: background, transform, border-radius;
+    transition-duration: 0.5s;
+    background: #8e2de2;
+    transform: translateY(-5px) scale(1.05);
+    border-radius: 8px;
 }
