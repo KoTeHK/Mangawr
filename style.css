@@ -10,7 +10,7 @@ body{
 }
 
 .header-menu{
-    background-color: #080808;
+    background-color: rgba(31, 31, 31);
     width: 100%;
     height: 5%;
     display: flex;
@@ -53,6 +53,8 @@ body{
     width: 8%;
     height: 100%;
     margin-left: 3%;
+    background-color: none;
+    border-bottom: 0px solid white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,6 +70,7 @@ body{
 }
 
 .pidtrumka:hover{
+    transition: border-bottom 0.5s;
     border-bottom: 3px solid white;
 }
 
@@ -98,11 +101,12 @@ body{
 }
 
 .active-button{
-    transition-property: background-color, color, border-top-left-radius, border-top-right-radius;
-    transition-duration: 0.5s;
+    transition: border-color background-color color border-top-left-radius border-top-right-radius 0.5s;
     color: black;
     background-color: white;
-    border-radius: 10px;
+    border-color: black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .coupons{
@@ -255,7 +259,20 @@ body{
     margin-left: 5%;
 }
 
-.manga-cards{
+.product-cards-manga{
+    width: 90%;
+    height: 70%;
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    border: 2px solid rgba(51, 51, 51);
+    box-shadow: 4px 8px 16px 0px rgba(61, 58, 58, 0.7),
+                4px 8px 32px 0px rgba(61, 58, 58, 0.7),
+                4px 8px 16px 0px rgba(61, 58, 58, 0.7),
+                4px 8px 32px 0px rgba(61, 58, 58, 0.7);
+}
+
+.product-cards-merch{
     width: 90%;
     height: 70%;
     display: flex;
@@ -281,17 +298,23 @@ body{
     width: 25%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
     flex-direction: column;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
 }
 
-.product-image img{
+.product-image-container{
     width: 60%;
-    height: auto;
+    height: 40%;
+    display: flex;
+}
+
+.product-image img{
+    width: 100%;
+    height: 100%;
     display: inline;
-    justify-content: center;
     object-fit: cover;
     margin-top: 5%;
     margin-left: 20%;
@@ -299,7 +322,7 @@ body{
 
 .product-name{
     width: 100%;
-    height: 10%;
+    height: 3%;
     font-size: auto;
     color: white;
     display: flex;
@@ -315,6 +338,7 @@ body{
     display: flex;
     justify-content: center;
     margin-top: 3%;
+    margin-left: 5%;
 }
 
 .product-price{
@@ -325,7 +349,7 @@ body{
     display: flex;
     justify-content: flex-start;
     margin-left: 10%;
-    margin-bottom: 18%;
+    margin-bottom: 5%;
 }
 
 .product-buy{
@@ -337,7 +361,6 @@ body{
     display: flex;
     font-size: 16px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-left: 30%;
     align-items: center;
     justify-content: center;
     font-weight: 500;
@@ -396,19 +419,20 @@ body{
 }
 
 .sidemenu{
-    transition-property: right;
-    transition-duration: (0.5s);
+    transition: right 0.5s;
     background-color: white;
     width: 30%;
-    height: 40%;
+    height: 60%;
     position: fixed;
     display: flex;
-    right: -30%;
+    flex-direction: column;
+    right: -32%;
+    outline: 3px solid darkgray;
 }
 .active {
-    transition-property: right;
-    transition-duration: (0.5s);
+    transition: border-bottom-left-radius right 0.5s;
     right: 0%;
+    border-bottom-left-radius: 30px;
 }
 
 .unactive {
@@ -481,4 +505,89 @@ body{
     width: 100%;
     height: auto;
     margin-left: 2%;
+}
+
+.pidtrumka-alert{
+    width: 20%;
+    height: 30%;
+    border-radius: 30px;
+    display: flex;
+    top: -30%;
+    background-color: white;
+    outline: 3px solid darkgray;
+}
+
+.sidemenu-tovar-container{
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    width: 100%;
+    height: 85%;
+    padding-top: 8%;
+    flex-direction: column;
+}
+
+.sidemenu-tovar-card{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    outline: 2px solid darkgray;
+}
+
+.sidemenu-tovar-img-container{
+    width: 30%;
+    height: 80%;
+    display: flex;
+    margin-left: 3%;
+}
+
+.sidemenu-tovar-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sidemenu-tovar-subname{
+    width: 20%;
+    height: auto;
+    flex-wrap: wrap;
+    margin-right: 15%;
+    font-size: 24px;
+    color: darkgray;
+    background-color: #8e2de2;
+}
+
+.sidemenu-tovar-price{
+    width: 15%;
+    height: auto;
+    font-size: 28px;
+    color: black;
+    margin-left: 5%;
+}
+
+.tovari-line{
+    width: 90%;
+    height: 3%;
+    display: flex;
+    background-color: darkgray;
+    border-radius: 15px;
+    margin-left: 5%;
+}
+
+.sidemenu-total-price{
+    margin-top: 2%;
+    height: 10%;
+    align-items: center;
+    font-size: 32px;
+    color: rgba(51, 51, 51);
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5%;
+}
+
+.delete-tovar img{
+    width: 4%;
+    height: auto;
+    justify-content: flex-end;
+    align-items: flex-start;
 }
