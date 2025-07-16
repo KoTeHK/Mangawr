@@ -10,23 +10,28 @@
 <script src="submain.js"> </script>
     <header>
         <div class="header-menu"> 
-            <div class="site-info">Про нас</div>
-            <div class="pidtrumka">Підтримка</div>
-            <div class="tovari">Товари</div>
+            <button class="site-info">Про нас</button>
+            <button class="pidtrumka">Підтримка</button>
+            <button class="tovari">Товари</button>
         </div>
     </header>
+    <div class="mail-menu">
+            <div class="input-container">
+                <input type="text" id="textInput" placeholder="Введіть текст..">
+                <button class="product-buy-mail" id="mail-button">Надіслати</button>
+            </div>
+    </div>
     <div class="sidemenu">
         <div class="sidemenu-tovar-container">
-            <div class="sidemenu-tovar-card">
-                <div class="sidemenu-tovar-img-container">
-                    <div class="sidemenu-tovar-img"><img src="mangaImg/0.jpg"></div>
-                </div>
-                <div class="sidemenu-tovar-subname">asdasdasdasdasdasdasdasdasdasdas</div>
-                <div class="sidemenu-tovar-price">149 грн</div>
-            </div>
+            <!--Вставка товарів для покупки-->
         </div>
         <div class="tovari-line"></div>
-        <div class="sidemenu-total-price">234234</div>
+        <div class="sidemenu-bottom-container">
+            <div class="sidemenu-total-price" id = "total-price"></div>
+            <div class="sidemenu-button-container">
+                <button class="product-buy-header" id="sidemenu-buy-button">Замовити</button>
+            </div>
+        </div>
     </div>
     <div class="start-img">
         <img src="start-img.jpg">
@@ -52,6 +57,7 @@
         <div class="manga-top-text">Manga</div>
         <div class="manga-top"></div>
         <div class="product-cards-manga" id="manga-cards">
+            <!--Вставка карток манги-->
         </div>
         <div class="manga-bottom"></div>
 
@@ -59,10 +65,16 @@
         <div class="manga-top-text">Merch</div>
         <div class="manga-top"></div>
         <div class="product-cards-merch" id="merch-cards">
+            <!--Вставка карток мерчу-->
         </div>
         <div class="manga-bottom"></div>
     </div>
 
+    <!--SITEINFO-->
+
+    <div class="site-info-page" id ="site-info-presentation"></div>
+
+    <!--FOOTER-->
 <footer>
     <div class="footer">
         <div class="bank-footer">

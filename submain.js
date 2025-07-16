@@ -7,23 +7,116 @@ const manga = [
     },
     {
         "name":"Манга",
-        "subname":"Том 1 Чорнетка Смерті",
+        "subname":"Том 4 Чорнетка Смерті",
         "price": 149,
+    },
+    {
+        "name":"Манга",
+        "subname":"Том 1-4 Атака на титанів",
+        "price": 649,
+    },
+    {
+        "name":"Манга",
+        "subname":"Том 3 Магічна Битва",
+        "price": 199,
+    },
+    {
+        "name":"Манга",
+        "subname":"Том 1 Дан Да Дан",
+        "price": 149,
+    },
+    {
+        "name":"Манга",
+        "subname":"Том 1 Чорнетка смерті",
+        "price": 149,
+    },
+    {
+        "name":"Манга",
+        "subname":"Том 1-3 Монолог Фармацевта",
+        "price": 549,
+    },
+    {
+        "name":"Манга",
+        "subname":"Том 1 Воллейбол",
+        "price": 199,
+    },
+    {
+        "name":"Манга",
+        "subname":"Том 1 Синя Тюрьма",
+        "price": 149,
+    },
+    {
+        "name":"Манга",
+        "subname":"Том 1 Пожирач Душ",
+        "price": 149,
+    },
+    {
+        "name":"Манга",
+        "subname":"Том 1 Oshi no Ko",
+        "price": 199,
+    },
+    {
+        "name":"Манга",
+        "subname":"Том 1 Моя Героїчна Академія",
+        "price": 249,
     }
 ]
 
 const merch = [
     {
-        "img":"sub-reklama2.jpg",
-        "name":"Манга",
-        "subname":"Том 1",
+        "name":"Статуетка",
+        "subname":"Клинок Розсікуючий Демонів",
+        "price": 749,
+    },
+    {
+        "name":"Брелок",
+        "subname":"Мегумі // Магічна Битва",
+        "price": 49,
+    },
+    {
+        "name":"Брелки",
+        "subname":"Клинок Розсікуючий Демонів",
+        "price": 449,
+    },
+    {
+        "name":"Брелок",
+        "subname":"Шляпа Луффі // Ван Піс",
         "price": 149,
     },
     {
-        "img":"sub-reklama2.jpg",
-        "name":"Манга",
-        "subname":"Том 1",
+        "name":"Рюкзак",
+        "subname":"Луффі 5 гір // Ван піс",
+        "price": 1349,
+    },
+    {
+        "name":"Нічник",
+        "subname":"Кіллуа // Хантер х Хантер",
+        "price": 349,
+    },
+    {
+        "name":"Сумка",
+        "subname":"Сумка Намі // Ван Піс",
+        "price": 1049,
+    },
+    {
+        "name":"Футболка",
+        "subname":"Саске // Наруто",
         "price": 149,
+    },
+    {
+        "name":"Худі",
+        "subname":"Годжо Сатору // Магічна Битва",
+        "price": 749,
+    },
+    {
+        "name":"Іграшка",
+        "subname":"М'яка іграшка Годжо Сатору",
+        "price": 449,
+    },
+    {
+        "name":"Худі",
+        "subname":"Бакуго // Моя героїчна академія",
+        "price": 849,
     }
 ]
 
@@ -48,6 +141,14 @@ let product_subname = document.querySelector('.product-subname')
 let product_price = document.querySelector('.product-price')
 let product_buy = document.querySelector('.product-buy')
 let sidemenu_tovar_container = document.querySelector('.sidemenu-tovar-container')
+let site_info = document.querySelector('.site-info')
+let mailmenu = document.querySelector('.mail-menu')
+let mail_active = document.querySelector('.mail-active')
+let site_info_page = document.querySelector('.site-info-page')
+let coupons = document.querySelector('.coupons')
+let start_img = document.querySelector('.start-img')
+let div_list = document.querySelector('.div-list')
+let footer = document.querySelector('.footer')
 let a = 0
 
 sub_reklama1.addEventListener('click', function(){
@@ -63,31 +164,87 @@ sub_reklama2.addEventListener('click', function(){
     main_reklama1.style.backgroundImage = "url('main-reklama2.jpg')"
 })
 
+let site_info_check = 0
+site_info.addEventListener('click', function(){
+    if (site_info_check == 1){
+            site_info.classList.remove('active-button')
+            coupons.style.display = "flex";
+            start_img.style.display = "inline";
+            div_list.style.display = "flex";
+            footer.style.marginTop = "55%";
+            site_info_page.style.display = 'none';
+            document.getElementById("site-info-presentation").innerHTML = ``;
+            site_info_check = 0
+        }
+    else{
+            site_info.classList.add('active-button')
+            site_info_page.style.display = 'flex';
+            const text = `
+            <h2>Ласкаво просимо до MangaWr — вашого надійного провідника у світ манґи!</h2>
+            <span>Ми — команда справжніх шанувальників японської культури, яка створила MangaWr, щоб дарувати радість кожному фанату манґи. У нашому магазині ви знайдете широкий</span>
+            <span>вибір ліцензійної манґи українською, англійською та японською мовами — від культової класики до найгарячіших новинок.</span>
+            <h3>Надійність — наш пріоритет.</h3>
+            <span>Ми співпрацюємо лише з перевіреними постачальниками, щоб кожне видання, яке ви отримуєте, було автентичним і в ідеальному стані.</span>
+            <h3>Безпечна доставка — гарантовано.</h3>
+            <span>Упаковуємо кожне замовлення з турботою, використовуємо надійні служби доставки, а всі відправлення супроводжуються трек-номерами.</span> 
+            <span>Ваше замовлення буде в безпеці з моменту оформлення до моменту, коли потрапить до ваших рук.</span>
+            <h3>MangaWr — це не просто магазин.</h3>
+            <span>Це місце, де народжується захоплення, де кожна історія оживає, і де кожен покупець — частина великої родини фанатів манґи.</span>
+            <p>Дякуємо, що обираєте MangaWr.<br>
+            Читайте з насолодою, мрійте без меж!</p>`;
+            document.getElementById("site-info-presentation").innerHTML = text;
+            coupons.style.display = "none";
+            start_img.style.display = "none";
+            div_list.style.display = "none";
+            footer.style.marginTop = "0%";
+            site_info_check = 1        
+    }
+})
+
 let check = 0
 tovari.addEventListener('click', function(){
     if (check == 1){
             sidemenu.classList.remove('active')
-            tovari.classList.remove('active_button')
+            tovari.classList.remove('active-button')
             check = 0
         }
     else{
             sidemenu.classList.add('active')
-            tovari.classList.add('active_button')
+            tovari.classList.add('active-button')
             check = 1        
     }
 })
 
+let mailmenu_check = 0
+pidtrumka.addEventListener('click', function(){
+    if (mailmenu_check == 1){
+            mailmenu.classList.remove('mail-active')
+            pidtrumka.classList.remove('active-button')
+            mailmenu_check = 0
+        }
+    else{
+            mailmenu.classList.add('mail-active')
+            pidtrumka.classList.add('active-button')
+            mailmenu_check = 1        
+    }
+})
+
+let mail_button = document.getElementById('mail-button')
+mail_button.addEventListener("click", function(){
+    const input = document.getElementById("textInput").value;
+    alert(input + "// Це Повідомлення доставлено");
+})
+
+let total_price = 0
+
 for (let i = 0; i < manga.length; i += 1) {
     var MangaCardsPaste = document.getElementById('manga-cards');
-    var MerchCardsPaste = document.getElementById('merch-cards');
+
+    //MANGA//
 
     var newElement = document.createElement('div');
     newElement.classList.add('product-card');
     newElement.id = `${i}`;
-
-    var newElementM = document.createElement('div');
-    newElementM.classList.add('product-card');
-    newElementM.id = `M${i}`;
 
     var ElementImgCont = document.createElement('div');
     ElementImgCont.classList.add('product-image-container');
@@ -97,50 +254,27 @@ for (let i = 0; i < manga.length; i += 1) {
     ElementImg.classList.add('product-image');
     ElementImg.innerHTML = `${'<img src= "mangaImg/'}${[i]}${'.jpg">'}`;
 
-    var ElementImgM = document.createElement('div');
-    ElementImgM.classList.add('product-image');
-    ElementImgM.innerHTML = `${'<img src= "mangaImg/'}${[i]}${'.jpg">'}`;
-
     var ElementName = document.createElement('div');
     ElementName.classList.add('product-name');
     ElementName.textContent = `${manga[i].name}`;
 
-    var ElementNameM = document.createElement('div');
-    ElementNameM.classList.add('product-name');
-    ElementNameM.textContent = `${merch[i].name}`;
-
     var ElementLine = document.createElement('div');
     ElementLine.classList.add('manga-top-card');
-
-    var ElementLineM = document.createElement('div');
-    ElementLineM.classList.add('manga-top-card');
 
     var ElementDescr = document.createElement('div');
     ElementDescr.classList.add('product-subname');
     ElementDescr.textContent = `${manga[i].subname}`;
 
-    var ElementDescrM = document.createElement('div');
-    ElementDescrM.classList.add('product-subname');
-    ElementDescrM.textContent = `${merch[i].subname}`;
-
     var ElementPrice = document.createElement('div');
     ElementPrice.classList.add('product-price');
     ElementPrice.textContent = `${manga[i].price} Грн`;
-
-    var ElementPriceM = document.createElement('div');
-    ElementPriceM.classList.add('product-price');
-    ElementPriceM.textContent = `${merch[i].price} Грн`;
 
     var ElementBuy = document.createElement('div');
     ElementBuy.classList.add('product-buy');
     ElementBuy.textContent = `Купити`;
     ElementBuy.id = `button${i}`;
 
-
-    var ElementBuyM = document.createElement('div');
-    ElementBuyM.classList.add('product-buy');
-    ElementBuyM.textContent = `Купити`;
-    ElementBuyM.id = `buttonM${i}`;
+    //PASTE//
 
     product_cards_manga.appendChild(newElement);
     newElement.appendChild(ElementImgCont);
@@ -150,17 +284,11 @@ for (let i = 0; i < manga.length; i += 1) {
     newElement.appendChild(ElementDescr);
     newElement.appendChild(ElementPrice);
     newElement.appendChild(ElementBuy);
-    
-
-    product_cards_merch.appendChild(newElementM);
-    newElementM.appendChild(ElementImgM);
-    newElementM.appendChild(ElementNameM);
-    newElementM.appendChild(ElementLineM);
-    newElementM.appendChild(ElementDescrM);
-    newElementM.appendChild(ElementPriceM);
-    newElementM.appendChild(ElementBuyM);
 
     var button_buy = document.getElementById(`button${i}`);
+
+    var total_price_container = document.getElementById(`total-price`)
+    
     
     button_buy.addEventListener('click', function(){
         var ElementTovar = document.createElement('div');
@@ -184,25 +312,141 @@ for (let i = 0; i < manga.length; i += 1) {
 
         var delete_tovar = document.createElement(`div`);
             delete_tovar.classList.add('delete-tovar');
-            delete_tovar.innerHTML = `${'<img src= "delete.png">'}`;
-            delete_tovar.id = `delete${i}`;
+
+        var delete_tovar_image = document.createElement(`div`);
+            delete_tovar_image.classList.add('delete-tovar-image');
+            delete_tovar_image.innerHTML = `${'<img src= "delete.png">'}`;
+            delete_tovar_image.id = `delete${i}`;
+
+        total_price = total_price + manga[i].price
+        total_price_container.innerHTML = `${total_price} грн`
+        
+        delete_tovar_image.addEventListener('click', function(){
+            var target_tovar = document.getElementById(`tovar${i}`);
+            if (target_tovar){
+                target_tovar.remove();
+                total_price = total_price - manga[i].price
+                total_price_container.innerHTML = `${total_price} грн`
+            };
+        
+        
+        });
+        sidemenu_tovar_container.appendChild(ElementTovar);
+        ElementTovar.appendChild(product_image_container);
+        product_image_container.appendChild(product_image_tovar);
+        ElementTovar.appendChild(product_subname_tovar);
+        ElementTovar.appendChild(product_price_tovar); 
+        ElementTovar.appendChild(delete_tovar);
+        delete_tovar.appendChild(delete_tovar_image);
+    });
+
     
-            sidemenu_tovar_container.appendChild(ElementTovar);
-            ElementTovar.appendChild(product_image_container);
-            product_image_container.appendChild(product_image_tovar);
-            ElementTovar.appendChild(product_subname_tovar);
-            ElementTovar.appendChild(product_price_tovar); 
-            ElementTovar.appendChild(delete_tovar);
-    });
-
-    var delete_tovar_button = document.getElementById(`delete${i}`);
-
-    delete_tovar_button.addEventListener('click', function(){
-        var target_tovar = document.getElementById(`tovar${i}`);
-            target_tovar.remove();
-    });
 }
 
+for (let i = 0; i < manga.length; i += 1) {
+    var MerchCardsPaste = document.getElementById('merch-cards');
+
+    //MERCH//
+
+    var newElementM = document.createElement('div');
+    newElementM.classList.add('product-card');
+    newElementM.id = `M${i}`;
+
+    var ElementImgContM = document.createElement('div');
+    ElementImgContM.classList.add('product-image-container');
+    ElementImgContM.id = `imgContM${i}`;
+
+    var ElementImgM = document.createElement('div');
+    ElementImgM.classList.add('product-image');
+    ElementImgM.innerHTML = `${'<img src= "merchImg/'}${[i]}${'.jpg">'}`;
+
+    var ElementNameM = document.createElement('div');
+    ElementNameM.classList.add('product-name');
+    ElementNameM.textContent = `${merch[i].name}`;
+
+    var ElementLineM = document.createElement('div');
+    ElementLineM.classList.add('manga-top-card');
+
+    var ElementDescrM = document.createElement('div');
+    ElementDescrM.classList.add('product-subname');
+    ElementDescrM.textContent = `${merch[i].subname}`;
+
+    var ElementPriceM = document.createElement('div');
+    ElementPriceM.classList.add('product-price');
+    ElementPriceM.textContent = `${merch[i].price} Грн`;
+
+    var ElementBuyM = document.createElement('div');
+    ElementBuyM.classList.add('product-buy');
+    ElementBuyM.textContent = `Купити`;
+    ElementBuyM.id = `buttonM${i}`;
+
+    //PASTE//
+
+    product_cards_merch.appendChild(newElementM);
+    newElementM.appendChild(ElementImgContM);
+    ElementImgContM.appendChild(ElementImgM);
+    newElementM.appendChild(ElementNameM);
+    newElementM.appendChild(ElementLineM);
+    newElementM.appendChild(ElementDescrM);
+    newElementM.appendChild(ElementPriceM);
+    newElementM.appendChild(ElementBuyM);
+
+    var button_buyM = document.getElementById(`buttonM${i}`);
+
+    var total_price_container = document.getElementById(`total-price`)
+
+    button_buyM.addEventListener('click', function(){
+        var ElementTovar = document.createElement('div');
+            ElementTovar.classList.add('sidemenu-tovar-card');
+            ElementTovar.id = `tovar${i}`
+
+        var product_subname_tovar = document.createElement(`div`);
+            product_subname_tovar.classList.add('sidemenu-tovar-subname');
+            product_subname_tovar.textContent = `${merch[i].subname}`;
+
+        var product_image_tovar = document.createElement(`div`);
+            product_image_tovar.classList.add('sidemenu-tovar-img');
+            product_image_tovar.innerHTML = `${'<img src= "merchImg/'}${[i]}${'.jpg">'}`;
+
+        var product_price_tovar = document.createElement(`div`);
+            product_price_tovar.classList.add('sidemenu-tovar-price');
+            product_price_tovar.textContent = `${merch[i].price} грн`;
+
+        var product_image_container = document.createElement(`div`);
+            product_image_container.classList.add('sidemenu-tovar-img-container');
+
+        var delete_tovar = document.createElement(`div`);
+            delete_tovar.classList.add('delete-tovar');
+
+        var delete_tovar_image = document.createElement(`div`);
+            delete_tovar_image.classList.add('delete-tovar-image');
+            delete_tovar_image.innerHTML = `${'<img src= "delete.png">'}`;
+            delete_tovar_image.id = `delete${i}`;
+
+        total_price = total_price + merch[i].price
+        total_price_container.innerHTML = `${total_price} грн`
+        
+        delete_tovar_image.addEventListener('click', function(){
+            var target_tovar = document.getElementById(`tovar${i}`);
+            if (target_tovar){
+                target_tovar.remove();
+                total_price = total_price - merch[i].price
+                total_price_container.innerHTML = `${total_price} грн`
+            };
+        
+        
+        });
+        sidemenu_tovar_container.appendChild(ElementTovar);
+        ElementTovar.appendChild(product_image_container);
+        product_image_container.appendChild(product_image_tovar);
+        ElementTovar.appendChild(product_subname_tovar);
+        ElementTovar.appendChild(product_price_tovar); 
+        ElementTovar.appendChild(delete_tovar);
+        delete_tovar.appendChild(delete_tovar_image);
+    });
+
+
+}
 
 
 })
