@@ -7,6 +7,7 @@ body{
     margin: 0px;
     justify-content: center;
     height: 100%;
+    overflow-x: hidden;
 }
 
 .header-menu{
@@ -24,6 +25,12 @@ body{
     font-size: 16px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 400;
+}
+
+.div-list::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .start-img img{
@@ -231,6 +238,7 @@ body{
     margin-top: 5%;
     margin-left: 5%;
     flex-wrap: wrap;
+    overflow: hidden;
 }
 
 .manga-text{
@@ -405,9 +413,11 @@ body{
     align-items: flex-start;
     flex-direction: row;
     display: flex;
-    margin-top: 55%;
+    margin-top: 10%;
     background-color: rgba(51, 51, 51);
     padding-top: 2%;
+    position: relative;
+    z-index: 1;
 }
 
 .footer-info{
