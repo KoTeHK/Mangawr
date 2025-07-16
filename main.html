@@ -22,14 +22,14 @@
             </div>
     </div>
     <div class="sidemenu">
-        <div class="sidemenu-tovar-container">
+        <div class="sidemenu-tovar-container" id ="sidemenu-tovar">
             <!--Вставка товарів для покупки-->
         </div>
         <div class="tovari-line"></div>
         <div class="sidemenu-bottom-container">
             <div class="sidemenu-total-price" id = "total-price"></div>
             <div class="sidemenu-button-container">
-                <button class="product-buy-header" id="sidemenu-buy-button">Замовити</button>
+                <button class="product-buy-header" id="order-buy">Замовити</button>
             </div>
         </div>
     </div>
@@ -74,6 +74,52 @@
 
     <div class="site-info-page" id ="site-info-presentation"></div>
 
+    <!--ORDER PAGE-->
+
+    <div class="create-order-page">
+        <div class="order-detail">
+            <div class="order-tovar-container" id = "product-tovar-container"></div>
+
+            <div class="order-info">
+                <div class="order-info-paste">
+                    <div class="order-input-container">
+                        <input type="text" placeholder="Введіть Своє Ім'я" id = "name">
+                    </div>
+                    <div class="order-input-container">
+                        <input type="text" placeholder="Введіть Своє Прізвище" id = "surname">
+                    </div>
+                    <div class="input-container-number">
+                        <input type="text" placeholder="Введіть Номер Телефону" pattern="[0-9]*" inputmode="numeric" id = "phone">
+                    </div>
+                    <div class="input-container-gmail">
+                        <input type="gmail" placeholder="Введіть Свою Електронну адресу" id = "email">
+                    </div>
+                    <label for="delivery">Спосіб доставки:</label>
+                    <select id="delivery">
+                        <option>Нова пошта</option>
+                        <option>Укрпошта</option>
+                    </select>
+                    <div class="input-container-comentary">
+                        <input type="text" placeholder="Коментар">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="order-bottom-container">
+            <div class="order-bottom-left">
+                <div class="total-price-order" id = "order-price"></div>
+                <div class="promo-container">
+                    <input type="text" id="promocode" placeholder="Введіть промокод..">
+                    <button class="product-buy-order" id="promocode-button">Надіслати</button>
+                </div>
+            </div>
+            <div class = "order-buttons">
+                <button class="button-accept" id="accept">Замовити</button>
+                <button class="button-cancel" id="cancel">Відмінити</button>
+            </div>  
+        </div>
+    </div>
+
     <!--FOOTER-->
 <footer>
     <div class="footer">
@@ -97,10 +143,10 @@
             <span>Сб-Нд вихідні</span>
         </div>
         <div class="footer-social">
-            <div class="social1"><img src="tt.png"></div>
-            <div class="social2"><img src="tg.png"></div>
-            <div class="social3"><img src="youtube.png"></div>
-            <div class="social4"><img src="instagram.png"></div>
+            <div class="social1" id = "tt"><img src="tt.png"></div>
+            <div class="social2" id = "tg"><img src="tg.png"></div>
+            <div class="social3" id = "youtube"><img src="youtube.png"></div>
+            <div class="social4" id = "insta"><img src="instagram.png"></div>
         </div>
     </div>
 </footer>

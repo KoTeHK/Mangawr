@@ -808,3 +808,304 @@ body{
     border: none;
     outline: none;
 }
+
+.create-order-page{
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+}
+
+.order-detail{
+    width: 100%;
+    height: 80%;
+    display: flex;
+}
+
+.order-tovar-container{
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    width: 40%;
+    height: 100%;
+    flex-direction: column;
+    color: white;
+}
+
+.order-info-paste{
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+.order-custom-line{
+    width: 90%;
+    height: 2%;
+    margin-top: 1%;
+    background-color: #aaa;
+    border-radius: 5px;
+}
+
+.order-info{
+    width: 60%;
+    height: 100%;
+    display: flex;
+}
+
+.order-bottom-container{
+    height: 20%;
+    width: 100%;
+    display: flex;
+}
+
+.order-input-container{
+    width: 80%;
+    height: 10%;
+    padding: 3%;
+    margin-left: 5%;
+    margin-top: 2%;
+    border-radius: 10px;
+    font-family: sans-serif;
+    display: flex;
+    gap: 3%;
+    align-items: center;
+    font-size: 1vw;
+}
+
+.order-input-container input[type="text"] {
+    flex: 1;
+    padding: 4%;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 1.2vw;
+    height: 11%;
+    width: auto;
+    font-size: 1vw;
+}
+
+.input-container-number{
+    width: 80%;
+    height: 10%;
+    padding: 3%;
+    margin-left: 5%;
+    margin-top: 2%;
+    border-radius: 10px;
+    font-family: sans-serif;
+    display: flex;
+    gap: 3%;
+    align-items: center;
+    font-size: 1vw;
+}
+
+.input-container-number input[type="text"] {
+    flex: 1;
+    padding: 4%;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 1.2vw;
+    height: 11%;
+    width: auto;
+    font-size: 1vw;
+}
+
+.input-container-gmail{
+    width: 80%;
+    height: 10%;
+    padding: 3%;
+    margin-left: 5%;
+    margin-top: 2%;
+    border-radius: 10px;
+    font-family: sans-serif;
+    display: flex;
+    gap: 3%;
+    align-items: center;
+    font-size: 1vw;
+}
+
+.input-container-gmail input[type="gmail"] {
+    flex: 1;
+    padding: 4%;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 1.2vw;
+    height: 11%;
+    width: auto;
+    font-size: 1vw;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.1vw;
+}
+
+select {
+    display: block;
+    margin-top: 2%;
+    padding: 10px;
+    font-size: 1vw;
+    font-family: inherit;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    color: #000;
+    width: 80%;
+    height: 10%;
+    margin-left: 8%;
+    margin-top: 2%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+}
+
+.input-container-comentary{
+    width: 80%;
+    height: 20%;
+    padding: 3%;
+    margin-left: 5%;
+    margin-top: 2%;
+    border-radius: 10px;
+    font-family: sans-serif;
+    display: flex;
+    gap: 3%;
+    align-items: center;
+    font-size: 1vw;
+}
+
+.input-container-comentary input[type="text"] {
+    flex: 1;
+    padding: 4%;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 1.2vw;
+    height: 11%;
+    width: auto;
+    font-size: 1vw;
+}
+
+.total-price-order{
+    width: 40%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.button-accept{
+    width: 30%;
+    height: 20%;
+    background: rgb(22, 213, 29);
+    background: linear-gradient(0deg, rgb(15, 163, 12) 0%, rgb(17, 234, 85) 100%);
+    border-radius: 30px;
+    color:white;
+    display: flex;
+    font-size: 1vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    align-items: center;
+    border: none;
+    outline: none;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.button-accept:hover{
+    transition-property: background, transform, border-radius;
+    transition-duration: 0.5s;
+    background: #0ce94f;
+    transform: translateY(-5px) scale(1.05);
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.button-cancel{
+    width: 30%;
+    height: 20%;
+    background: rgb(247, 9, 9);
+    background: linear-gradient(0deg, rgb(255, 112, 3) 0%, rgb(246, 12, 12) 100%);
+    border-radius: 30px;
+    color:white;
+    display: flex;
+    font-size: 1vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    align-items: center;
+    border: none;
+    outline: none;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.button-cancel:hover{
+    transition-property: background, transform, border-radius;
+    transition-duration: 0.5s;
+    background: #ff2915;
+    transform: translateY(-5px) scale(1.05);
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.order-buttons{
+    width: 60%;
+    height: auto;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+}
+
+.promo-container{
+    width: 80%;
+    padding: 3%;
+    height: 5%;
+    margin-left: 5%;
+    margin-top: 2%;
+    border-radius: 10px;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.promo-container input[type="text"] {
+    flex: 1;
+    padding: 4%;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 1.2vw;
+    height: 5%;
+    width: auto;
+}
+
+.order-bottom-left{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-buy-order{
+    width: 30%;
+    height: 500%;
+    background: rgb(0,172,238);
+    background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+    border-radius: 30px;
+    color:white;
+    display: flex;
+    font-size: 1vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    align-items: center;
+    border: none;
+    outline: none;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.product-buy-order:hover{
+    transition-property: background, transform, border-radius;
+    transition-duration: 0.5s;
+    background: #8e2de2;
+    transform: scale(1.05);
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}

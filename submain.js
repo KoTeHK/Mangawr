@@ -149,6 +149,8 @@ let coupons = document.querySelector('.coupons')
 let start_img = document.querySelector('.start-img')
 let div_list = document.querySelector('.div-list')
 let footer = document.querySelector('.footer')
+let create_order_page = document.querySelector('.create-order-page')
+let header_menu = document.querySelector('.header-menu')
 let a = 0
 
 sub_reklama1.addEventListener('click', function(){
@@ -173,7 +175,6 @@ site_info.addEventListener('click', function(){
             div_list.style.display = "flex";
             footer.style.marginTop = "55%";
             site_info_page.style.display = 'none';
-            document.getElementById("site-info-presentation").innerHTML = ``;
             site_info_check = 0
         }
     else{
@@ -233,7 +234,123 @@ let mail_button = document.getElementById('mail-button')
 mail_button.addEventListener("click", function(){
     const input = document.getElementById("textInput").value;
     alert(input + "// Це Повідомлення доставлено");
+    document.getElementById("textInput").innerHTML = "";
 })
+
+let order_button = document.getElementById('order-buy')
+order_button.addEventListener("click", function(){
+    coupons.style.display = "none";
+    start_img.style.display = "none";
+    div_list.style.display = "none";
+    footer.style.marginTop = "0%";
+    create_order_page.style.display = "flex";
+    header_menu.style.display = "none";
+    sidemenu.classList.remove('active')
+})
+
+var accept = document.getElementById('accept')
+accept.addEventListener("click", function(event){
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const surname = document.getElementById("surname").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const delivery = document.getElementById("delivery").value;
+
+    const phoneRegex = /^\+?\d{10,13}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    let errors = [];
+
+    if (!name) errors.push("Введіть ім'я");
+    if (!surname) errors.push("Введіть прізвище");
+    if (!phoneRegex.test(phone)) errors.push("Введіть коректний номер телефону (10–13 цифр)");
+    if (!emailRegex.test(email)) errors.push("Введіть коректний email");
+    if (!delivery) errors.push("Оберіть спосіб доставки");
+
+    if (errors.length > 0) {
+      alert("❌ Помилки у формі:\n\n" + errors.join("\n"));
+    } 
+    else {
+    document.getElementById("product-tovar-container").replaceChildren();
+    document.getElementById("sidemenu-tovar").replaceChildren();
+    document.getElementById("total-price").innerHTML = "";
+    document.getElementById("order-price").innerHTML = "";
+    coupons.style.display = "flex";
+    start_img.style.display = "inline";
+    div_list.style.display = "flex";
+    footer.style.marginTop = "55%";
+    create_order_page.style.display = "none";
+    header_menu.style.display = "flex";
+    tovari.classList.remove('active-button')
+    alert(`Замовлення в очікуванні, Буде доставлено через: 9999999999999999999999999 днів 
+        До сплати ${total_price} грн`);
+    check = 0
+    }
+});
+
+var cancel = document.getElementById('cancel')
+cancel.addEventListener("click", function(){
+    document.getElementById("product-tovar-container").replaceChildren();
+    document.getElementById("sidemenu-tovar").replaceChildren();
+    document.getElementById("total-price").innerHTML = "";
+    document.getElementById("order-price").innerHTML = "";
+    coupons.style.display = "flex";
+    start_img.style.display = "inline";
+    div_list.style.display = "flex";
+    footer.style.marginTop = "55%";
+    create_order_page.style.display = "none";
+    header_menu.style.display = "flex";
+    tovari.classList.remove('active-button')
+    alert("Замовлення відмінено.");
+    check = 0
+})
+
+var promocode_button = document.getElementById('promocode-button');
+
+let check_promocode = 0
+
+promocode_button.addEventListener('click', function(){
+    const promocode = document.getElementById('promocode')
+    let promocode_lower = promocode.value.toLowerCase();
+
+    if ((promocode_lower == "manga" || promocode_lower == "merch") && check_promocode == 0){
+        total_price = total_price * 0.7
+        let fixed_num = total_price.toFixed(2);
+        total_price = fixed_num
+        document.getElementById("order-price").innerHTML = `Загальна сума: ${total_price} грн`;
+        check_promocode = 1
+    }
+    else{
+        alert(`Промокод неправильно введений //
+        Промокод вже використано`)
+    }
+})
+
+const tt = document.getElementById("tt");
+
+tt.addEventListener("click", function() {
+    window.open("https://www.tiktok.com/uk-UA/", "_blank");
+});
+
+const tg = document.getElementById("tg");
+
+tg.addEventListener("click", function() {
+    window.open("https://web.telegram.org/a/", "_blank");
+});
+
+const yt = document.getElementById("youtube");
+
+yt.addEventListener("click", function() {
+    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley", "_blank");
+});
+
+const insta = document.getElementById("insta");
+
+insta.addEventListener("click", function() {
+    window.open("https://www.instagram.com/", "_blank");
+});
 
 let total_price = 0
 
@@ -287,7 +404,11 @@ for (let i = 0; i < manga.length; i += 1) {
 
     var button_buy = document.getElementById(`button${i}`);
 
-    var total_price_container = document.getElementById(`total-price`)
+    var total_price_container = document.getElementById(`total-price`);
+
+    var order_price_container = document.getElementById(`order-price`);
+
+    var product_tovar_container = document.getElementById(`product-tovar-container`);
     
     
     button_buy.addEventListener('click', function(){
@@ -320,6 +441,7 @@ for (let i = 0; i < manga.length; i += 1) {
 
         total_price = total_price + manga[i].price
         total_price_container.innerHTML = `${total_price} грн`
+        order_price_container.innerHTML = `Загальна сума: ${total_price} грн`
         
         delete_tovar_image.addEventListener('click', function(){
             var target_tovar = document.getElementById(`tovar${i}`);
@@ -327,10 +449,18 @@ for (let i = 0; i < manga.length; i += 1) {
                 target_tovar.remove();
                 total_price = total_price - manga[i].price
                 total_price_container.innerHTML = `${total_price} грн`
+                total_price_order.innerHTML = `Загальна сума: ${total_price} грн`
             };
         
         
         });
+
+        const cloneElementTovar = ElementTovar.cloneNode(true);
+        const clone_product_image_container = product_image_container.cloneNode(true);
+        const clone_product_image_tovar = product_image_tovar.cloneNode(true);
+        const clone_product_subname_tovar = product_subname_tovar.cloneNode(true);
+        const clone_product_price_tovar = product_price_tovar.cloneNode(true);
+
         sidemenu_tovar_container.appendChild(ElementTovar);
         ElementTovar.appendChild(product_image_container);
         product_image_container.appendChild(product_image_tovar);
@@ -338,12 +468,18 @@ for (let i = 0; i < manga.length; i += 1) {
         ElementTovar.appendChild(product_price_tovar); 
         ElementTovar.appendChild(delete_tovar);
         delete_tovar.appendChild(delete_tovar_image);
+
+        product_tovar_container.appendChild(cloneElementTovar);
+        cloneElementTovar.appendChild(clone_product_image_container);
+        clone_product_image_container.appendChild(clone_product_image_tovar);
+        cloneElementTovar.appendChild(clone_product_subname_tovar);
+        cloneElementTovar.appendChild(clone_product_price_tovar); 
     });
 
     
 }
 
-for (let i = 0; i < manga.length; i += 1) {
+for (let i = 0; i < merch.length; i += 1) {
     var MerchCardsPaste = document.getElementById('merch-cards');
 
     //MERCH//
@@ -393,7 +529,11 @@ for (let i = 0; i < manga.length; i += 1) {
 
     var button_buyM = document.getElementById(`buttonM${i}`);
 
-    var total_price_container = document.getElementById(`total-price`)
+    var total_price_container = document.getElementById(`total-price`);
+
+    var total_price_order = document.getElementById(`order-price`);
+
+    var product_tovar_container = document.getElementById(`product-tovar-container`);
 
     button_buyM.addEventListener('click', function(){
         var ElementTovar = document.createElement('div');
@@ -425,6 +565,7 @@ for (let i = 0; i < manga.length; i += 1) {
 
         total_price = total_price + merch[i].price
         total_price_container.innerHTML = `${total_price} грн`
+        order_price_container.innerHTML = `Загальна сума: ${total_price} грн`
         
         delete_tovar_image.addEventListener('click', function(){
             var target_tovar = document.getElementById(`tovar${i}`);
@@ -432,10 +573,18 @@ for (let i = 0; i < manga.length; i += 1) {
                 target_tovar.remove();
                 total_price = total_price - merch[i].price
                 total_price_container.innerHTML = `${total_price} грн`
+                total_price_order.innerHTML = `Загальна сума: ${total_price} грн`
             };
         
         
         });
+
+        const cloneElementTovar = ElementTovar.cloneNode(true);
+        const clone_product_image_container = product_image_container.cloneNode(true);
+        const clone_product_image_tovar = product_image_tovar.cloneNode(true);
+        const clone_product_subname_tovar = product_subname_tovar.cloneNode(true);
+        const clone_product_price_tovar = product_price_tovar.cloneNode(true);
+
         sidemenu_tovar_container.appendChild(ElementTovar);
         ElementTovar.appendChild(product_image_container);
         product_image_container.appendChild(product_image_tovar);
@@ -443,6 +592,12 @@ for (let i = 0; i < manga.length; i += 1) {
         ElementTovar.appendChild(product_price_tovar); 
         ElementTovar.appendChild(delete_tovar);
         delete_tovar.appendChild(delete_tovar_image);
+
+        product_tovar_container.appendChild(cloneElementTovar);
+        cloneElementTovar.appendChild(clone_product_image_container);
+        clone_product_image_container.appendChild(clone_product_image_tovar);
+        cloneElementTovar.appendChild(clone_product_subname_tovar);
+        cloneElementTovar.appendChild(clone_product_price_tovar); 
     });
 
 
