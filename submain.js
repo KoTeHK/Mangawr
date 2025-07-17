@@ -147,10 +147,12 @@ let mail_active = document.querySelector('.mail-active')
 let site_info_page = document.querySelector('.site-info-page')
 let coupons = document.querySelector('.coupons')
 let start_img = document.querySelector('.start-img')
-let div_list = document.querySelector('.div-list')
 let footer = document.querySelector('.footer')
 let create_order_page = document.querySelector('.create-order-page')
 let header_menu = document.querySelector('.header-menu')
+let hide = document.querySelector('.hide')
+let div_list1 = document.querySelector('.div-list1')
+let div_list2 = document.querySelector('.div-list2')
 let a = 0
 
 sub_reklama1.addEventListener('click', function(){
@@ -166,13 +168,15 @@ sub_reklama2.addEventListener('click', function(){
     main_reklama1.style.backgroundImage = "url('main-reklama2.jpg')"
 })
 
+
 let site_info_check = 0
 site_info.addEventListener('click', function(){
     if (site_info_check == 1){
             site_info.classList.remove('active-button')
             coupons.style.display = "flex";
             start_img.style.display = "inline";
-            div_list.style.display = "flex";
+            div_list1.style.display = "flex";
+            div_list2.style.display = "flex";
             footer.style.marginTop = "55%";
             site_info_page.style.display = 'none';
             site_info_check = 0
@@ -196,7 +200,8 @@ site_info.addEventListener('click', function(){
             document.getElementById("site-info-presentation").innerHTML = text;
             coupons.style.display = "none";
             start_img.style.display = "none";
-            div_list.style.display = "none";
+            div_list1.style.display = "none";
+            div_list2.style.display = "none";
             footer.style.marginTop = "0%";
             site_info_check = 1        
     }
@@ -241,7 +246,8 @@ let order_button = document.getElementById('order-buy')
 order_button.addEventListener("click", function(){
     coupons.style.display = "none";
     start_img.style.display = "none";
-    div_list.style.display = "none";
+    div_list1.style.display = "none";
+    div_list2.style.display = "none";
     footer.style.marginTop = "0%";
     create_order_page.style.display = "flex";
     header_menu.style.display = "none";
@@ -279,8 +285,9 @@ accept.addEventListener("click", function(event){
     document.getElementById("order-price").innerHTML = "";
     coupons.style.display = "flex";
     start_img.style.display = "inline";
-    div_list.style.display = "flex";
-    footer.style.marginTop = "55%";
+    div_list1.style.display = "flex";
+    div_list2.style.display = "flex";
+    footer.style.marginTop = "10%";
     create_order_page.style.display = "none";
     header_menu.style.display = "flex";
     tovari.classList.remove('active-button')
@@ -298,8 +305,9 @@ cancel.addEventListener("click", function(){
     document.getElementById("order-price").innerHTML = "";
     coupons.style.display = "flex";
     start_img.style.display = "inline";
-    div_list.style.display = "flex";
-    footer.style.marginTop = "55%";
+    div_list1.style.display = "flex";
+    div_list2.style.display = "flex";
+    footer.style.marginTop = "10%";
     create_order_page.style.display = "none";
     header_menu.style.display = "flex";
     tovari.classList.remove('active-button')

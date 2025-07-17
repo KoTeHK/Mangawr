@@ -33,6 +33,10 @@ body{
   clear: both;
 }
 
+.hide {
+    display: none;
+}
+
 .start-img img{
     width: 80%;
     height: 70%;
@@ -230,7 +234,18 @@ body{
     transform: scale(1.2);
 }
 
-.div-list{
+.div-list2{
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    margin-left: 5%;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.div-list1{
     width: 90%;
     height: 80%;
     display: flex;
@@ -350,7 +365,7 @@ body{
 .product-name{
     width: 100%;
     height: 3%;
-    font-size: 0.7vw;
+    font-size: 1vw;
     color: white;
     display: flex;
     justify-content: center;
@@ -359,16 +374,19 @@ body{
 
 .product-subname{
     width: 300px;
+    max-width: 100%;
     height: 15%;
-    font-size: 1.5vw;
+    font-size: clamp(14px, 2vw, 24px);
     color: lightgray;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     justify-content: center;
-    white-space: pre-wrap;
+    white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     max-height: 4.4em;
     margin-top: 3%;
 }
