@@ -294,6 +294,8 @@ accept.addEventListener("click", function(event){
     alert(`Замовлення в очікуванні, Буде доставлено через: 9999999999999999999999999 днів 
         До сплати ${total_price} грн`);
     check = 0
+    quanity = 0
+    tovari.innerHTML = `Товари ${quanity}`
     }
 });
 
@@ -312,6 +314,9 @@ cancel.addEventListener("click", function(){
     header_menu.style.display = "flex";
     tovari.classList.remove('active-button')
     alert("Замовлення відмінено.");
+    quanity = 0
+    tovari.innerHTML = `Товари ${quanity}`
+
     check = 0
 })
 
