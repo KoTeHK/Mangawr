@@ -1152,3 +1152,7 @@ select {
     font-size: 14px;
     margin-left: 5%;
   }
+
+.white-text {
+    color: white;
+}
