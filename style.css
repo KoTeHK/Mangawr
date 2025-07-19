@@ -966,6 +966,7 @@ label {
     font-weight: bold;
     font-size: 1.1vw;
     color: white;
+    margin-left: 8%;
 }
 
 select {
