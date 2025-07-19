@@ -154,6 +154,8 @@ let hide = document.querySelector('.hide')
 let div_list1 = document.querySelector('.div-list1')
 let div_list2 = document.querySelector('.div-list2')
 let a = 0
+let total_price = 0
+let quanity = 0
 
 sub_reklama1.addEventListener('click', function(){
     console.log(main_reklama1.querySelector('img'))
@@ -365,9 +367,7 @@ insta.addEventListener("click", function() {
     window.open("https://www.instagram.com/", "_blank");
 });
 
-let total_price = 0
 
-let quanity = 0
 
 for (let i = 0; i < manga.length; i += 1) {
     var MangaCardsPaste = document.getElementById('manga-cards');
@@ -468,7 +468,7 @@ for (let i = 0; i < manga.length; i += 1) {
                 total_price_container.innerHTML = `${total_price} грн`
                 total_price_order.innerHTML = `Загальна сума: ${total_price} грн`
                 quanity = quanity - 1
-                tovari.innerHTML = `Товари ${quanity}`
+                tovari.innerHTML = `Товари: ${quanity}`
                 const quanity_text = document.getElementById("quanity");
                 quanity_text.innerHTML = quanity_text.innerHTML.replace(
                 /(\d+)/g, '<span class="highlight-number">$1</span>');
@@ -498,7 +498,7 @@ for (let i = 0; i < manga.length; i += 1) {
         cloneElementTovar.appendChild(clone_product_price_tovar); 
 
         quanity = quanity + 1
-        tovari.innerHTML = `Товари ${quanity}`
+        tovari.innerHTML = `Товари: ${quanity}`
         const quanity_text = document.getElementById("quanity");
         quanity_text.innerHTML = quanity_text.innerHTML.replace(
           /(\d+)/g, '<span class="highlight-number">$1</span>');
@@ -603,7 +603,7 @@ for (let i = 0; i < merch.length; i += 1) {
                 total_price_container.innerHTML = `${total_price} грн`
                 total_price_order.innerHTML = `Загальна сума: ${total_price} грн`
                 quanity = quanity - 1
-                tovari.innerHTML = `Товари ${quanity}`
+                tovari.innerHTML = `Товари: ${quanity}`
                 const quanity_text = document.getElementById("quanity");
                 quanity_text.innerHTML = quanity_text.innerHTML.replace(
                 /(\d+)/g,'<span class="highlight-number">$1</span>');
@@ -633,7 +633,7 @@ for (let i = 0; i < merch.length; i += 1) {
         cloneElementTovar.appendChild(clone_product_price_tovar); 
 
         quanity = quanity + 1
-        tovari.innerHTML = `Товари + ${quanity}`
+        tovari.innerHTML = `Товари: ${quanity}`
         const quanity_text = document.getElementById("quanity");
         quanity_text.innerHTML = quanity_text.innerHTML.replace(
           /(\d+)/g, '<span class="highlight-number">$1</span>');
