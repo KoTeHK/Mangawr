@@ -637,7 +637,7 @@ for (let i = 0; i < merch.length; i += 1) {
         cloneElementTovar.appendChild(clone_product_price_tovar); 
 
         quanity = quanity + 1
-        tovari.innerHTML = `Товари + ${quanity}`
+        tovari.innerHTML = `Товари ${quanity}`
         const quanity_text = document.getElementById("quanity");
         quanity_text.innerHTML = quanity_text.innerHTML.replace(
           /(\d+)/g, '<span class="highlight-number">$1</span>');
