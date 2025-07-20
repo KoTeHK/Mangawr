@@ -296,6 +296,10 @@ accept.addEventListener("click", function(event){
     check = 0
     quanity = 0
     tovari.innerHTML = `Товари ${quanity}`
+    check_promocode = 0
+    total_price = 0
+    total_price_container.innerHTML = `${total_price} грн`
+    order_price_container.innerHTML = `Загальна сума: ${total_price} грн`
     }
 });
 
@@ -316,7 +320,10 @@ cancel.addEventListener("click", function(){
     alert("Замовлення відмінено.");
     quanity = 0
     tovari.innerHTML = `Товари ${quanity}`
-
+    check_promocode = 0
+    total_price = 0
+    total_price_container.innerHTML = `${total_price} грн`
+    order_price_container.innerHTML = `Загальна сума: ${total_price} грн`
     check = 0
 })
 
