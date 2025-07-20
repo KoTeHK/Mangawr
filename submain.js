@@ -483,9 +483,6 @@ for (let i = 0; i < manga.length; i += 1) {
         const clone_product_subname_tovar = product_subname_tovar.cloneNode(true);
         const clone_product_price_tovar = product_price_tovar.cloneNode(true);
 
-        clone_product_subname_tovar.classlist.add('white-text');
-        clone_product_price_tovar.classlist.add('white-text');
-
         sidemenu_tovar_container.appendChild(ElementTovar);
         ElementTovar.appendChild(product_image_container);
         product_image_container.appendChild(product_image_tovar);
@@ -620,9 +617,6 @@ for (let i = 0; i < merch.length; i += 1) {
         const clone_product_image_tovar = product_image_tovar.cloneNode(true);
         const clone_product_subname_tovar = product_subname_tovar.cloneNode(true);
         const clone_product_price_tovar = product_price_tovar.cloneNode(true);
-
-        clone_product_subname_tovar.classlist.add('white-text');
-        clone_product_price_tovar.classlist.add('white-text');
 
         sidemenu_tovar_container.appendChild(ElementTovar);
         ElementTovar.appendChild(product_image_container);
