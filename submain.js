@@ -7,7 +7,7 @@ const manga = [
     },
     {
         "name":"Манга",
-        "subname":"Том 4 Чорнетка Смерті",
+        "subname":"Том 4 зошит Смерті",
         "price": 149,
     },
     {
@@ -27,7 +27,7 @@ const manga = [
     },
     {
         "name":"Манга",
-        "subname":"Том 1 Чорнетка смерті",
+        "subname":"Том 1 зошит Смерті",
         "price": 149,
     },
     {
@@ -65,7 +65,7 @@ const manga = [
 const merch = [
     {
         "name":"Статуетка",
-        "subname":"Клинок Розсікуючий Демонів",
+        "subname":"Клинок, що розсікає демонів",
         "price": 749,
     },
     {
@@ -291,7 +291,7 @@ accept.addEventListener("click", function(event){
     create_order_page.style.display = "none";
     header_menu.style.display = "flex";
     tovari.classList.remove('active-button')
-    alert(`Замовлення в очікуванні, Буде доставлено через: 9999999999999999999999999 днів 
+    alert(`Замовлення в очікувані, Буде доставлено через: 9999999999999999999999999 днів 
         До сплати ${total_price} грн`);
     check = 0
     quanity = 0
